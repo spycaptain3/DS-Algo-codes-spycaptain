@@ -17,7 +17,7 @@ int main()
     printf("Enter the %d elements in the second array: \n",m);
     for(i=0;i<m;i++)
     {
-        scanf("%d",&b[i]);
+     scanf("%d",&b[i]);
     }
     printf("Union of the 1st and 2nd array is: \n");
     k=m+n;
@@ -29,10 +29,32 @@ int main()
     {
         c[i]=b[i-n];
     }
+     printf("The new merged array is: \n");
+    for(i=0;i<k;i++)
+    {
+        printf("%d\t",c[i]);
+    }
     for(i=0;i<k;i++)
     {
         int temp1=c[i];
+        for(j=i+1;j<k;j++)
+        {
+            if(temp1==c[j])
+            {
+                for(int p=j;p<k;p++)
+                {
+                    c[p]=c[p+1];
+                }
+            }
+
+        }
         
+    }
+   
+    printf("Union of the 1st and 2nd array is :\n");
+    for(i=0;i<k;i++)
+    {
+        printf("%d\t",c[i]);
     }
     return 0;
 }
