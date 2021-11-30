@@ -1,7 +1,10 @@
-#include<stdio.h>
-int a=6, b=9;
+#include<iostream>
+using namespace std;
 int main()
 {
-    printf("%d",a+b);
-    return 0;
+   int a,b;
+   float sum;
+   sum=(10/3.6)+4;
+   cout<<sum;
+   return 0;
 }
