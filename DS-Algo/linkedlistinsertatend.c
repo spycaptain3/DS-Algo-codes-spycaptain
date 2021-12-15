@@ -5,7 +5,7 @@ struct Node{
     int data;
     struct Node * next;
 };
-
+//h
 void linkedListTraversal(struct Node *ptr)
 {
     while (ptr != NULL)
