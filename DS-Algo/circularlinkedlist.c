@@ -18,6 +18,16 @@ void traversal(struct node *head)
     }while(p!=head);
 }
 
+struct node * insertatfirst(struct node *head,int data)
+{
+   struct node * ptr=(struct node *)malloc(sizeof(struct node));
+   ptr->data=data;
+   ptr->next=head->next;
+   head->next=ptr;
+   head=ptr;
+   return head;
+}
+
 int main()
 {
     struct node * head;
@@ -47,6 +57,9 @@ int main()
     five->data=23;
     five->next=head;
 
+    traversal(head);
+    printf("after instertion at head: \n");
+    head=insertatfirst(head,987);
     traversal(head);
     
     return 0;

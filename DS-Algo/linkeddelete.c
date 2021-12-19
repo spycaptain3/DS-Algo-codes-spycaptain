@@ -17,6 +17,7 @@ void linkedListTraversal(struct Node *ptr)
 }
 
 // Case 1: Deleting the first element from the linked list
+/*
 struct Node * deleteFirst(struct Node * head){
     struct Node * ptr = head;
     head = head->next;
@@ -71,41 +72,63 @@ struct Node * deleteAtIndex(struct Node * head, int value){
     }
     return head;
 }
+*/
 int main()
 {
     struct Node *head;
     struct Node *second;
     struct Node *third;
     struct Node *fourth;
+    struct Node *fifth;
+    
 
     // Allocate memory for nodes in the linked list in Heap
     head = (struct Node *)malloc(sizeof(struct Node));
     second = (struct Node *)malloc(sizeof(struct Node));
     third = (struct Node *)malloc(sizeof(struct Node));
     fourth = (struct Node *)malloc(sizeof(struct Node));
+    fifth = (struct Node *)malloc(sizeof(struct Node));
 
     // Link first and second nodes
-    head->data = 4;
+    head->data = 1;
     head->next = second;
 
     // Link second and third nodes
-    second->data = 3;
+    second->data = 1;
     second->next = third;
 
     // Link third and fourth nodes
-    third->data = 8;
+    third->data = 2;
     third->next = fourth;
 
     // Terminate the list at the third node
-    fourth->data = 1;
-    fourth->next = NULL;
+    fourth->data = 3;
+    fourth->next = fifth;
 
-    printf("Linked list before deletion\n");
-    linkedListTraversal(head);
+    fifth->data = 3;
+    fifth->next = NULL;
 
-    // head = deleteFirst(head); // For deleting first element of the linked list
-    // head = deleteAtIndex(head, 2);
-    head = deleteAtLast(head);
+    // printf("Linked list before deletion\n");
+    // linkedListTraversal(head);
+
+    // // head = deleteFirst(head); // For deleting first element of the linked list
+    // // head = deleteAtIndex(head, 2);
+    // head = deleteAtLast(head);
+
+    struct Node *p=head;
+    struct Node *q=head->next;
+        while(q!=NULL)
+        {
+            if(p->data==q->data)
+            {
+                p->next=q->next;       
+            }
+           else{
+               p=p->next;
+               q=q->next;
+            }
+        }
+
     printf("Linked list after deletion\n");
     linkedListTraversal(head);
 
